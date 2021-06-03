@@ -10,7 +10,10 @@ let package = Package(
         .library(
             name: "frameworkdemo-swiftpm",
             targets: ["frameworkdemo-swiftpm"]),
-        .library(name: "MyFramework", targets: ["MyFramework"]),
+        
+        .library(
+            name: "MyFramework",
+            targets: ["MyFramework"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -22,7 +25,9 @@ let package = Package(
         .target(
             name: "frameworkdemo-swiftpm",
             dependencies: ["realm-cocoa"]),
-        .binaryTarget(name: "MyFramework", path: "MyFramework.xcframework"),
+        
+        .binaryTarget(name: "MyFramework", path: "Sources/MyFramework.xcframework"),
+        
         .testTarget(
             name: "frameworkdemo-swiftpmTests",
             dependencies: ["frameworkdemo-swiftpm"]),
